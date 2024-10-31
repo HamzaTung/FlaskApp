@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Portfolio Builder</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('create_portfolio') }}">Create Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('custom_page') }}">Custom Page</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Create Your Portfolio</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.first_name.label(class="form-label") }}
+                {{ form.first_name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label(class="form-label") }}
+                {{ form.last_name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-label") }}
+                {{ form.email(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.phone.label(class="form-label") }}
+                {{ form.phone(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.profile_picture.label(class="form-label") }}
+                {{ form.profile_picture(class="form-control-file") }}
+            </div>
+            <div class="form-group">
+                {{ form.bio.label(class="form-label") }}
+                {{ form.bio(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.skills.label(class="form-label") }}
+                {{ form.skills(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.online_links.label(class="form-label") }}
+                {{ form.online_links(class="form-control") }}
+            </div>
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+    </div>
+</body>
+</html>
